@@ -19,10 +19,14 @@
             # usar os namespaces
             use MeuApp\Tecnico\Aluno;
             use MeuApp\Superior\Aluno as AlunoSuperior;
+            use MeuApp\Core\Conexao;
 
             # criando objetos
             $a1 = new Aluno("Augusto");
             $a2 = new AlunoSuperior("Josefina");
+
+            # criando uma conexão orientada a objetos
+            $conn = new Conexao();
             ?>
         </main>
     </div>
