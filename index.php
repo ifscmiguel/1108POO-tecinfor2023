@@ -11,22 +11,28 @@
 <body>
     <div class="container">
         <main>
-            <h1>PHP e orientação a objetos</h1>
             <?php
-            # buscar os arquivos
+            # faz o require dos arquivos sob demanda
             require 'autoload.php';
 
             # usar os namespaces
+            use MeuApp\Lib\Conexao;
             use MeuApp\Tecnico\Aluno;
-            use MeuApp\Superior\Aluno as AlunoSuperior;
-            use MeuApp\Core\Conexao;
-
-            # criando objetos
-            $a1 = new Aluno("Augusto");
-            $a2 = new AlunoSuperior("Josefina");
 
             # criando uma conexão orientada a objetos
             $conn = new Conexao();
+
+            # criar um aluno novo
+            $a1 = new Aluno();
+            $a1->nome = 'Antonio';
+            $a1->email = 'antonio@foo.bar';
+            echo "<p>meu nome é $a1->nome</p>";
+
+            # buscar um usuario do BD
+            $a2 = new Aluno(1);
+            echo "<p>meu nome é $a2->nome</p>";
+
+
             ?>
         </main>
     </div>
