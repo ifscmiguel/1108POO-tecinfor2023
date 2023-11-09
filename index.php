@@ -26,12 +26,15 @@
             $a1 = new Aluno();
             $a1->nome = 'Antonio';
             $a1->email = 'antonio@foo.bar';
-            echo "<p>meu nome é $a1->nome</p>";
+            $a1->senha = '123456';
+            echo "<p> meu nome é $a1->nome </p>";
+            #salvar no BD
+            $a1->salvar();
+            echo "<p> meu id é $a1->id </p>"; 
 
             # buscar um usuario do BD
             $a2 = new Aluno(1);
-            echo "<p>meu nome é $a2->nome</p>";
-
+            echo "<p> meu nome é $a2->nome </p>";
 
             ?>
         </main>
